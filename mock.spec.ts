@@ -1,6 +1,6 @@
 import { jest } from "@jest/globals";
 
-jest.unstable_mockModule("fs", () => ({
+jest.unstable_mockModule("node:fs", () => ({
   readFileSync: () => "mocked value",
 }));
 
