@@ -5,4 +5,5 @@ export default {
       useESM: true,
     },
   },
+  resolver: "./resolver.cjs",
 };
