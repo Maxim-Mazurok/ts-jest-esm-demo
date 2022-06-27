@@ -1,3 +1,5 @@
+// https://github.com/facebook/jest/issues/12270#issuecomment-1153458603
+
 const resolve = require("enhanced-resolve");
 
 const resolver = (path, options) => {
