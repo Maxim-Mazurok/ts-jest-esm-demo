@@ -1,7 +1,7 @@
 import { jest } from "@jest/globals";
 
 jest.unstable_mockModule("node:fs", () => ({
-  readFileSync: jest.fn().mockReturnValue("mocked value"),
+  readFileSync: jest.fn().mockReturnValueOnce("mocked value"),
 }));
 
 const { readFileSync } = await import("node:fs");
@@ -13,5 +13,6 @@ it("works", () => {
 
   // Assert
   expect(result).toBe("mocked value");
-  expect(readFileSync).toHaveBeenCalled();
+  expect(readFileSync).toHaveBeenCalledTimes(1);
+  expect(readFileSync).toHaveBeenCalledWith("engines.ts");
 });
